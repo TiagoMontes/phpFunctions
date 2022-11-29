@@ -117,6 +117,26 @@ function combinacaoSimples($n, $k): float
 
 $combinacaoSimples = combinacaoSimples(10,3);
 
-echo ("A combinação simples de N = 10 e K = 3 é igual a $combinacaoSimples");
+echo ("A combinação simples de N = 10 e K = 3 é igual a $combinacaoSimples" . "\n");
 
 // imprimir na tela sequencia de fibbonacci.
+
+function listFibonacci($elemento): float
+{
+    $ultimo = 1;
+    $penultimo = 0;
+
+    for ($i = 1; $i < $elemento; $i++) { 
+        $atual = soma($ultimo, $penultimo);
+
+        $penultimo = $ultimo;
+        $ultimo = $atual;
+    }
+    
+    return $atual;
+}
+
+$listaFibonacci = listFibonacci(7);
+
+echo ("$listaFibonacci");
+
