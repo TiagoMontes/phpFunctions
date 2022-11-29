@@ -123,20 +123,21 @@ echo ("A combinação simples de N = 10 e K = 3 é igual a $combinacaoSimples" .
 
 function listFibonacci($elemento): float
 {
-    $ultimo = 1;
-    $penultimo = 0;
+    $ultimoValor = 0;
+    $penultimoValor = 1;
 
-    for ($i = 1; $i < $elemento; $i++) { 
-        $atual = soma($ultimo, $penultimo);
 
-        $penultimo = $ultimo;
-        $ultimo = $atual;
+    for($i = 1; $i <= $elemento; $i++){
+        
+        $valorAtual = soma($ultimoValor, $penultimoValor);
+        $penultimoValor = $ultimoValor;
+        $ultimoValor = $valorAtual;
+
+        echo ("$ultimoValor, ");
+        // desta forma temos uma visualização melhor da lista de fibonacci
     }
-    
-    return $atual;
+    return $ultimoValor;
+
 }
 
-$listaFibonacci = listFibonacci(7);
-
-echo ("$listaFibonacci");
-
+$listaFibonacci = listFibonacci(14);
